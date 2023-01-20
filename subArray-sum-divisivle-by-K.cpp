@@ -6,6 +6,7 @@ using namespace std;
 
 
 //this is basic approach we traverse all possible subarray and try to find sum which is equal to K or not 
+// time  complexity => O(n2)
 // int solve(vector<int>&v,int k){
 //     int cnt=0;
 //     for (int i = 0; i < v.size(); i++)
@@ -24,6 +25,8 @@ using namespace std;
     
 // }
 
+// prefix sum method 
+// time complexity => O(n)
 int solve1(vector<int>&v,int k){
     unordered_map<int ,int >mp;
     int cnt=0;
@@ -37,10 +40,8 @@ int solve1(vector<int>&v,int k){
             rem+=k;
         }
        if(mp.find(rem)!=mp.end())
-       
          cnt+=mp[rem];
          mp[rem]++;
-      
     }
     return cnt;
 }
